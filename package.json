@@ -1,0 +1,31 @@
+{
+  "name": "smsowl",
+  "version": "1.0.0",
+  "description": "Wrapper for smsowl.in REST API.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mahoujas/smsowl-nodejs.git"
+  },
+  "keywords": [
+    "smsowl",
+    "transactional",
+    "sms",
+    "promotional",
+    "sms",
+    "sms",
+    "india"
+  ],
+  "author": "M/s Mahoujas <pavan.kumar@mahoujas.com> (https://mahoujas.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mahoujas/smsowl-nodejs/issues"
+  },
+  "homepage": "https://github.com/mahoujas/smsowl-nodejs",
+  "dependencies": {
+    "q": "^1.3.0"
+  }
+}
