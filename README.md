@@ -1,6 +1,6 @@
 ## Sms Owl Node.js Wrapper
 
-This package is wrapper of Sms Owl REST API hosted at [https://smsowl.in](https://smsowl.in)
+This package is wrapper of Sms Owl REST API hosted at [https://smsowl.in](https://smsowl.in). Sms Owl provides transactional and promotional SMS Gateway services.
 
 
 ### Installing Sms Owl package
