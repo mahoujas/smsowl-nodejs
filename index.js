@@ -1,4 +1,5 @@
 var q = require("q");
+var http = require("http");
 
 var config;
 
@@ -13,15 +14,15 @@ var requestOption = {
 };
 
 function configure(options){
-    if(!!options){
+    if(!options){
         throw new Error("Options must be specifed");
     }
 
-    if(!!options.accountId){
+    if(!options.accountId){
         throw new Error("Account id must be specified.")
     }
 
-    if(!!options.apiKey){
+    if(!options.apiKey){
         throw new Error("API Key must be specified.")
     }
 
@@ -34,7 +35,7 @@ function configure(options){
 function sendPromotionalSms(senderId,to,message,smsType,callback){
     var defer = q.defer();
 
-    if(!!config){
+    if(!config){
         throw new Error("Account id and api key not configured. Call smsOwl.configure(options)")
     }
 
@@ -43,13 +44,14 @@ function sendPromotionalSms(senderId,to,message,smsType,callback){
         smsType = "normal";
     }
 
+    if(!smsType){
+        smsType = "normal";
+    }
+
     if(!(smsType == "normal" || smsType == "flash")){
         throw new Error("Sms type parameter should be 'normal' or 'flash'");
     }
 
-    if(!smsType){
-        smsType = "normal";
-    }
 
     var postData = {
         accountId: config.accountId,
@@ -105,7 +107,7 @@ function sendPromotionalSms(senderId,to,message,smsType,callback){
 function sendTransactionalSms(senderId,to,templateId,placeholders,callback){
     var defer = q.defer();
 
-    if(!!config){
+    if(!config){
         throw new Error("Account id and api key not configured. Call smsOwl.configure(options)")
     }
 
