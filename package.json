@@ -1,6 +1,6 @@
 {
   "name": "smsowl",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "Wrapper for smsowl.in REST API.",
   "main": "index.js",
   "scripts": {
@@ -19,7 +19,7 @@
     "sms",
     "india"
   ],
-  "author": "M/s Mahoujas <pavan.kumar@mahoujas.com> (https://mahoujas.com)",
+  "author": "Pavan Kumar <pavan.kumar@mahoujas.com> (https://mahoujas.com)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/mahoujas/smsowl-nodejs/issues"
