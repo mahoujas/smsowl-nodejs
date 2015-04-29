@@ -1,6 +1,6 @@
 {
   "name": "smsowl",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Wrapper for smsowl.in REST API.",
   "main": "index.js",
   "scripts": {
