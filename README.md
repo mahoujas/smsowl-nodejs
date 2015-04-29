@@ -48,6 +48,8 @@ Credentials should be configured before sending SMS.
         	}
    		});
 
+Variable `result` will content SMS id for single message sent or array of SMS ids for bulk sms sent.
+
 
 ##### sendPromotionalSms(senderId,to,message,callback)
 
@@ -75,6 +77,8 @@ Lets assume templateId of "39ec9de0efa8a48cb6e60ee5" with following template.
         }
     });
 
+Variable `result` will content SMS id
+
 
 
 ### Promise Pattern
@@ -89,30 +93,9 @@ Our API also support promise pattern. In above mentioned APIs just omit callback
         });
 
 
-### Return object structure
+### Error object structure
 
-On success for single SMS sent the following object is passed to 2nd parameter of callback or to 1st parameter of promise's success callback
-
-	{
-	    "status": "success",
-	    "smsId": "79fee3193f5fd8f828737527"
-	}
-
-
-
-On success for bulk SMS sent the following object is passed to 2nd parameter (results) of callback or to 1st parameter of promise callback
-
-	{
-	    "status": "success",
-	    "smsIds": [
-	        "79fee3193f5fd8f828737527",
-	        "af93998f580162afe8b7d031",
-	        "3190d3b8d782f0ce7acfb1cf",
-	        "a2d107d4a6ac8769aeeff2ab"
-	    ]
-	}
-
-Of failure following object is sent to 1 parameter (error) of callback of to 1st parameter of promise's failure callback.
+On failure following object is sent to 1 parameter (error) of callback of to 1st parameter of promise's failure callback. The `message` field explains cause of error.
 	
 	{
 	    "status": "error",

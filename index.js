@@ -75,10 +75,11 @@ function sendPromotionalSms(senderId,to,message,smsType,callback){
         res.on('end', function () {
             var responseJson = JSON.parse(response);
             if(statusCode == 200){
+                var returnValue = Array.isArray(to) ? responseJson.smsIds : responseJson.smsId;
                 if(!!callback){
-                    callback(null,responseJson);
+                    callback(null,returnValue);
                 }
-                defer.resolve(responseJson);
+                defer.resolve(returnValue);
             }else{
                 if(!!callback){
                     callback(responseJson);
@@ -136,9 +137,9 @@ function sendTransactionalSms(senderId,to,templateId,placeholders,callback){
             var responseJson = JSON.parse(response);
             if(statusCode == 200){
                 if(!!callback){
-                    callback(null,responseJson);
+                    callback(null,responseJson.smsId);
                 }
-                defer.resolve(responseJson);
+                defer.resolve(responseJson.smsId);
             }else{
                 if(!!callback){
                     callback(responseJson);
