@@ -4,9 +4,9 @@ var http = require("http");
 var config;
 
 var requestOption = {
-    hostname: "smsowl.in",
+    hostname: "api.smsowl.in",
     port: 443,
-    path: "/api/v1/sms",
+    path: "/v1/sms",
     method: 'POST',
     headers: {
         "Content-Type": "application/json"
