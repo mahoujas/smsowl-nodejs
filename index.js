@@ -1,5 +1,5 @@
 var q = require("q");
-var http = require("http");
+var http = require("https");
 
 var config;
 
