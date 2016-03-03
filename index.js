@@ -106,6 +106,14 @@ function sendPromotionalSms(senderId,to,message,smsType,callback){
 
 
 function sendTransactionalSms(senderId,to,templateId,placeholders,callback){
+    return sendTransactionalGeneral(senderId,to,templateId,placeholders,"transactional",callback);
+}
+
+function sendTransPremiumSms(senderId,to,templateId,placeholders,callback){
+    return sendTransactionalGeneral(senderId,to,templateId,placeholders,"transPremium",callback);
+}
+
+function sendTransactionalGeneral(senderId,to,templateId,placeholders,dndType,callback){
     var defer = q.defer();
 
     if(!config){
@@ -115,7 +123,7 @@ function sendTransactionalSms(senderId,to,templateId,placeholders,callback){
     var postData = {
         accountId: config.accountId,
         apiKey: config.apiKey,
-        dndType: "transactional",
+        dndType: dndType,
         smsType: "normal",
         senderId: senderId,
         to: to,
@@ -168,5 +176,6 @@ function sendTransactionalSms(senderId,to,templateId,placeholders,callback){
 module.exports = {
     configure: configure,
     sendPromotionalSms: sendPromotionalSms,
-    sendTransactionalSms: sendTransactionalSms
+    sendTransactionalSms: sendTransactionalSms,
+    sendTransPremiumSms: sendTransPremiumSms
 };
